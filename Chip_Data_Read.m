@@ -16,4 +16,6 @@ for i = 1:gene_num
     end
 end
 
+gene_chip = gene_chip';
+
 fclose(fid);

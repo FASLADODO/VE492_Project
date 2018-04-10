@@ -18,4 +18,11 @@ for i = 1:sample_num
     end
 end
 
+disease_list_bool = zeros(sample_num, 1);
+for i = 1:sample_num
+    if disease_list_num(i) ~= 0 && disease_list_num(i) ~= 1
+        disease_list_bool(i) = 1;
+    end
+end
+
 disease_name_list = disease_name_list';
