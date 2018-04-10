@@ -11,3 +11,7 @@ end
 
 disp([num2str(correct_num), ' from ', num2str(896), ' test samples are correct predicted.'])
 disp(['Correct Rate is: ', num2str(correct_num/896*100), '%.']);
+
+gene_chip_3 = tsne(gene_chip_reduction, 'Algorithm', 'barneshut', 'NumPCAComponents', 50, 'NumDimensions', 3);
+figure
+scatter3(gene_chip_3(:,1), gene_chip_3(:,2), gene_chip_3(:,3), 15, disease_list_bool, 'filled');
