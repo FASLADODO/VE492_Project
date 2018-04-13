@@ -1,3 +1,4 @@
+% Read and parse label data
 sample_num = size(ETABM185, 1) - 1;
 disease_list_num = zeros(sample_num,1);
 disease_list_string = table2array(ETABM185(2:sample_num+1, 8));

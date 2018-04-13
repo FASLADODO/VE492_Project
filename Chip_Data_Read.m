@@ -1,12 +1,14 @@
+% Reading microarray.origin.txt
 gene_num = 22283;
 sample_num = 5896;
 
 gene_chip = zeros(gene_num, sample_num);
 
-fid = fopen('microarray.original.txt');
+fid = fopen('Gene_Chip_Data/microarray.original.txt'); 
 
 tmp = fgetl(fid);
 
+disp("Start loading data");
 for i = 1:gene_num
     tmp = fgetl(fid);
     tmp = str2num(tmp);
@@ -17,5 +19,6 @@ for i = 1:gene_num
 end
 
 gene_chip = gene_chip';
+disp("Loading finished");
 
 fclose(fid);
