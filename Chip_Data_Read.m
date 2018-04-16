@@ -2,12 +2,15 @@
 gene_num = 22283;
 sample_num = 5896;
 
+% Initialize the matrix
 gene_chip = zeros(gene_num, sample_num);
 
 fid = fopen('Gene_Chip_Data/microarray.original.txt'); 
 
+% The first line contains gene labels
 tmp = fgetl(fid);
 
+% From the second line, each line represents a sample
 disp("Start loading data");
 for i = 1:gene_num
     tmp = fgetl(fid);

@@ -4,7 +4,9 @@ rng('shuffle');
 %    'HyperparameterOptimizationOptions',struct('AcquisitionFunctionName',...
 %    'expected-improvement-plus'))
 
-Mdl = fitcsvm(gene_chip_reduction(1: 5000, :), disease_list_bool(1:5000, :))
+Mdl = fitcsvm(gene_chip_reduction(1: 5000, :), disease_list_bool(1:5000, :),  'OptimizeHyperparameters','auto',...
+    'HyperparameterOptimizationOptions',struct('AcquisitionFunctionName',...
+    'expected-improvement-plus'))
 correct_num = 0;
 for i = 1:896
     label_tmp = predict(Mdl, gene_chip_reduction(5000 + i, :));
