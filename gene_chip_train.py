@@ -3,6 +3,7 @@ import gene_chip_data_parsing
 import gene_chip_inference
 import os
 
+
 import scipy.io as sio
 
 BATCH_SIZE = 100
@@ -77,6 +78,8 @@ def main(argv=None):
     disease_list_bool = data_disease_list_bool['disease_list_bool']
     gene_chip_reduction = data_gene_chip_reduction['gene_chip_reduction']
     gene = gene_chip_data_parsing.read_data_sets(gene_chip_reduction, disease_list_bool)
+    print("*********************")
+    print(gene.train.data.dtype)
     train(gene)
 
 
