@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 INPUT_NODE = 1271
-OUTPUT_NODE = 1
+OUTPUT_NODE = 2
 LAYER1_NODE = 500
 
 

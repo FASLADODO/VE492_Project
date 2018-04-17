@@ -31,6 +31,7 @@ class DataSet(object):
             self._num_examples = data.shape[0]
             if dtype == dtypes.float32:
                 data = data.astype(numpy.float32)
+                labels = labels.astype(numpy.float64)
 
         self._data = data
         self._labels = labels
