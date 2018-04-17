@@ -1,14 +1,14 @@
 import tensorflow as tf
 
 INPUT_NODE = 1271
-OUTPUT_NODE = 2
+OUTPUT_NODE = 1
 LAYER1_NODE = 500
 
 
 def get_weight_variable(shape, regularizer):
     weights=tf.get_variable(
         "weights", shape,
-        initialzier=tf.truncated_normal_initializer(stddev=0.1)
+        initializer=tf.truncated_normal_initializer(stddev=0.1)
     )
 
     if regularizer != None:
