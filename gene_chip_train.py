@@ -18,7 +18,7 @@ MODEL_SAVE_PATH = "gene_model/"
 MODEL_NAME = "gene_model"
 
 
-def train(gene):gene_chip_reduction = data_gene_chip_reduction['gene_chip_reduction']
+def train(gene):
 
     x = tf.placeholder(
         tf.float32, [None, gene_chip_inference.INPUT_NODE], name='x-input'
