@@ -90,15 +90,24 @@ def train(gene):
 
 
 def main(argv=None):
-    data_disease_list_bool = sio.loadmat('disease_list_bool_mat.mat')
+    # data_disease_list_bool = sio.loadmat('disease_list_bool_mat.mat')
+    # data_disease_list_bool = sio.loadmat('disease_list_bool_mat_random.mat')
+    data_disease_list_bool = sio.loadmat('disease_list_bool_mat_random_200.mat')
 
     # data_gene_chip_reduction = sio.loadmat('gene_chip_reduction.mat')
-    data_gene_chip_reduction = sio.loadmat('gene_chip_reduction_norm.mat')
+    # data_gene_chip_reduction = sio.loadmat('gene_chip_reduction_norm.mat')
+    # data_gene_chip_reduction = sio.loadmat('gene_chip_reduction_norm_random.mat')
+    data_gene_chip_reduction = sio.loadmat('gene_chip_reduction_norm_random_200.mat')
 
-    disease_list_bool = data_disease_list_bool['disease_list_bool_mat']
+    # disease_list_bool = data_disease_list_bool['disease_list_bool_mat']
+    # disease_list_bool = data_disease_list_bool['disease_list_bool_mat_random']
+    disease_list_bool = data_disease_list_bool['disease_list_bool_mat_random_200']
 
     # gene_chip_reduction = data_gene_chip_reduction['gene_chip_reduction']
-    gene_chip_reduction = data_gene_chip_reduction['gene_chip_reduction_norm']
+    # gene_chip_reduction = data_gene_chip_reduction['gene_chip_reduction_norm']
+    # gene_chip_reduction = data_gene_chip_reduction['gene_chip_reduction_norm_random']
+    gene_chip_reduction = data_gene_chip_reduction['gene_chip_reduction_norm_random_200']
+
     gene = gene_chip_data_parsing.read_data_sets(gene_chip_reduction, disease_list_bool)
     print("*********************")
     print(numpy.size(gene.train.data, 0))
