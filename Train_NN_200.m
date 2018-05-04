@@ -7,6 +7,8 @@
 %   gene_chip_reduction_200_norm - input data.
 %   disease_list_bool_mat - target data.
 
+% This is a one-hidden layer neural network
+
 x = gene_chip_reduction_200_norm';
 t = disease_list_bool_mat';
 
