@@ -8,7 +8,7 @@
 %   gene_chip_reduction_200_norm - input data.
 %   disease_list_bool_mat - target data.
 
-x = gene_chip_reduction_200_norm';
+x = gene_chip_reduction_norm';
 t = disease_list_bool_mat';
 
 % Choose a Training Function
@@ -19,7 +19,8 @@ t = disease_list_bool_mat';
 trainFcn = 'trainscg';  % Scaled conjugate gradient backpropagation.
 
 % Create a Pattern Recognition Network
-hiddenLayerSize = [100 50 25];
+hiddenLayerSize = 512;
+% hiddenLayerSize = [512 256 128];
 net = patternnet(hiddenLayerSize, trainFcn);
 
 % Setup Division of Data for Training, Validation, Testing
@@ -43,10 +44,27 @@ view(net)
 
 % Plots
 % Uncomment these lines to enable various plots.
-%figure, plotperform(tr)
-%figure, plottrainstate(tr)
-%figure, ploterrhist(e)
-%figure, plotconfusion(t,y)
-%figure, plotroc(t,y)
-%[tpr,fpr,thresholds] = roc(t,y)；
+figure, plotperform(tr)
+figure, plottrainstate(tr)
+figure, ploterrhist(e)
+figure, plotconfusion(t,y)
+figure, plotroc(t,y)
+
+% trOut = y(tr.trainInd);
+% vOut = y(tr.valInd);
+% tsOut = y(tr.testInd);
+% trTarg = t(tr.trainInd);
+% vTarg = t(tr.valInd);
+% tsTarg = t(tr.testInd);
+% plotregression(trTarg, trOut, 'Train', vTarg, vOut, 'Validation', tsTarg, tsOut, 'Testing')
+
+
+
+
+
+
+
+
+
+
 
