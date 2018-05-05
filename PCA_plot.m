@@ -1,6 +1,9 @@
+% This script is for plotting the variance vs. dimension for PCA result
+% Setting the accuracy of the plot
 highest_variance = 0.95;
 step_change = 0.005;
 
+% Collect point data
 PCA_count = zeros(highest_variance/step_change+1,2);
 for step = 0 : step_change : highest_variance
     for reduction_count = 1 : size(latent_rate, 1)
@@ -12,6 +15,7 @@ for step = 0 : step_change : highest_variance
     end
 end
 
+% Plot the figure
 figure
 plot(PCA_count(:,1), PCA_count(:,2))
 xlabel('dimension')
