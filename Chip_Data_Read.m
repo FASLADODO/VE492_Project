@@ -1,4 +1,7 @@
-% Reading microarray.origin.txt
+%---------------------------------------------------
+% Reading microarray.origin.txt, the microarray data
+%---------------------------------------------------
+
 gene_num = 22283;
 sample_num = 5896;
 

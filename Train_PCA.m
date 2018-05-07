@@ -1,5 +1,10 @@
+%---------------------------------------------------------------
+% Apply PCA to the original microarray data, reduce dimension to
+% variance of 95%, 90% and with dimension of 200
+%---------------------------------------------------------------
+
 % data normalization
-%gene_chip_norm = mapminmax(gene_chip, -1, 1);
+% gene_chip_norm = mapminmax(gene_chip, -1, 1);
 gene_chip_norm = zscore(gene_chip);
 
 % PCA dimension reduction
@@ -7,18 +12,21 @@ gene_chip_norm = zscore(gene_chip);
 
 % Get number of dimensions with different variance percentage
 latent_rate = cumsum(latent)./sum(latent);
+
 % variance = 95%
 for reduction_count = 1 : size(latent_rate, 1)
     if latent_rate(reduction_count) > 0.95
         break;
     end
 end
+
 % variance = 90%
 for reduction_count_90 = 1 : size(latent_rate, 1)
     if latent_rate(reduction_count_90) > 0.9
         break;
     end
 end
+
 %variance = 85%
 for reduction_count_85 = 1 : size(latent_rate, 1)
     if latent_rate(reduction_count_85) > 0.85
