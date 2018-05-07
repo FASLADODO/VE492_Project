@@ -51,7 +51,7 @@ To apply .py codes, you need tensorflow :)
 You can directly run:
 
 ```bash
-python gene_chip_train.py
+$ python gene_chip_train.py
 ```
 
 And it will train NN models with data from the result of the data preparation MATLAB scripts.
@@ -60,8 +60,8 @@ It can automatically save the training models in /gene_model.
 
 To evaluate the model at the same time of training, please run:
 
-```
-python gene_chip_eval.py
+```bash
+$ python gene_chip_eval.py
 ```
 
 For more information about .py codes, please refer to comments in codes.
