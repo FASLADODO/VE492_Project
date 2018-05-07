@@ -1,7 +1,7 @@
-%---------------------------------------------------------------
+%--------------------------------------------------------------------------
 % Apply PCA to the original microarray data, reduce dimension to
 % variance of 95%, 90% and with dimension of 200
-%---------------------------------------------------------------
+%--------------------------------------------------------------------------
 
 % data normalization
 % gene_chip_norm = mapminmax(gene_chip, -1, 1);
@@ -42,5 +42,5 @@ gene_chip_reduction_200 = score(:, 1: 200);
 gene_chip_reduction_90 = score(:, 1: reduction_count_90);
 
 % data normalization
-gene_chip_reduction_norm = zscore(gene_chip_reduction, 0, 1);
-gene_chip_reduction_200_norm = zscore(gene_chip_reduction_200, 0, 1);
+gene_chip_reduction_norm = zscore(gene_chip_reduction);
+gene_chip_reduction_200_norm = zscore(gene_chip_reduction_200);

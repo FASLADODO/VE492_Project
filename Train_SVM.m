@@ -1,7 +1,7 @@
-%-----------------------------------------------------------------
+%--------------------------------------------------------------------------
 % This script will give the wrong result due to the high dimension
 % of dataset, please don't apply the result by this script
-%-----------------------------------------------------------------
+%--------------------------------------------------------------------------
 
 % Use the origin dataset without dimension-reduction to train SVM
 rng('shuffle');

@@ -1,5 +1,8 @@
-% This script is for plotting the variance vs. dimension for PCA result
-% Setting the accuracy of the plot
+%--------------------------------------------------------------------------
+% This script plots the variance vs. dimension for PCA result
+%--------------------------------------------------------------------------
+
+% Set the accuracy of the plot here
 highest_variance = 0.95;
 step_change = 0.005;
 

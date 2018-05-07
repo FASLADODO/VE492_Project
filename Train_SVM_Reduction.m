@@ -1,28 +1,28 @@
-%---------------------------------------------------------------
+%--------------------------------------------------------------------------
 % This script use the dimension-reduced data to train SVM models
 % The model use first 5000 data to train and left 896 data to test
-%---------------------------------------------------------------
+%--------------------------------------------------------------------------
 
 rng('shuffle');
 % Please uncomment the following functions to choose the training
 % method you want to apply. For the meaning of each function,
 % please refer to MATLAB handbook
-%------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 % [Mdl,FitInfo] = fitclinear(gene_chip_reduction(1: 5000, :), disease_list_bool(1:5000, :))
-%------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 % Mdl = fitcsvm(gene_chip_reduction(1: 5000, :), disease_list_bool(1:5000, :), 'OptimizeHyperparameters','auto',...
 %     'HyperparameterOptimizationOptions',struct('AcquisitionFunctionName',...
 %     'expected-improvement-plus'))
-%------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 Mdl = fitcsvm(gene_chip_reduction(1: 5000, :), disease_list_bool(1:5000, :),  'OptimizeHyperparameters','auto',...
     'HyperparameterOptimizationOptions',struct('AcquisitionFunctionName',...
     'expected-improvement-plus'))
-%------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 %Mdl = fitcsvm(gene_chip_reduction(1:5000, :), disease_list_bool(1:5000, :))
-%------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 %Mdl = fitcsvm(gene_chip_reduction_90(1:5000, :), disease_list_bool(1:5000, :),...
 %      'KernelFunction', 'polynomial', 'PolynomialOrder', 3)
-%------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 
 % Calculate the test accuracy
 correct_num = 0;

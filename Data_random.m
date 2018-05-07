@@ -1,6 +1,9 @@
-% These are data parsed for tensorflow
+%--------------------------------------------------------------------------
+% These are data parsed for tensorflow models(with _mat labels) and for
+% more traditional models training
+%--------------------------------------------------------------------------
+
 % Randomize data with 95% accuracy
-num = 1271;
 %random_data = [gene_chip_reduction_norm, disease_list_bool_mat];
 random_data = [gene_chip_reduction_norm, disease_list_bool];
 tmp = randperm(size(disease_list_bool_mat, 1));
@@ -26,7 +29,6 @@ gene_chip_reduction_norm_random_200 = random_data(:, 1:num);
 
 % These are data parsed for matlab classification learner
 random_data_200_app = [gene_chip_reduction_200_norm, disease_list_bool];
-
 gene_chip_app = [gene_chip, disease_list_bool];     
 
 % Randomize data with 100% accuracy
