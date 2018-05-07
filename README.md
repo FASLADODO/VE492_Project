@@ -16,7 +16,7 @@ Classical methods can reach the highest performance on binary classification tas
 
 
 
-## How to use the codes
+## How to use MATLAB scripts
 
 To apply the MATLAB codes, you need MathWorks Statistics and Machine Learning Toolbox for classical methods and MathWorks Neural Network Toolbox for deep learning methods on MATLAB.
 
@@ -37,3 +37,31 @@ Model training and evaluation
 8. Train_NN_four_layers.m
 9. Train_NN_200.m
 10. PCA_plot.m
+
+For more information about MATLAB scripts, please refer to comments in codes.
+
+
+
+## How to use .py codes
+
+To apply .py codes, you need tensorflow :)
+
+(I run my codes on tensorflow 1.7.0)
+
+You can directly run:
+
+```bash
+python gene_chip_train.py
+```
+
+And it will train NN models with data from the result of the data preparation MATLAB scripts.
+
+It can automatically save the training models in /gene_model.
+
+To evaluate the model at the same time of training, please run:
+
+```
+python gene_chip_eval.py
+```
+
+For more information about .py codes, please refer to comments in codes.
