@@ -14,6 +14,8 @@ Deep learning: fully-connected NN
 
 Classical methods can reach the highest performance on binary classification task(normal-abnomral) of 93.7%  and deep learning methods can reach 95.8% for that number.
 
+For detailed results, please refer to Project_Report.pdf
+
 
 
 ## How to use MATLAB scripts
